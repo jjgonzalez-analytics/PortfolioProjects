@@ -5,8 +5,7 @@ Skills used: JOINs, CTE's, Temp tables, Windows functions, Aggregate functions, 
 
 */
 
-SELECT
-	*
+SELECT *
 FROM
 	PortfolioProjects.dbo.CovidDeaths
 WHERE
@@ -180,8 +179,7 @@ WHERE
 --ORDER BY
 --	2,3
 )
-SELECT
-	*,
+SELECT *,
 	(RollingPeopleVaccinated/population)*100
 FROM
 	PopvsVac
@@ -230,6 +228,8 @@ FROM
 
 --Creating view to store data for later visualizations
 
+USE PortfolioProjects
+GO
 CREATE VIEW PercentPopulationVaccinated AS
 SELECT
 	dea.continent,
