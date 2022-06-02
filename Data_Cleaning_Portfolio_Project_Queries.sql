@@ -6,8 +6,7 @@ Cleaning Data in SQL Queries
 */
 
 
-SELECT 
-	*
+SELECT *
 FROM 
 	PortfolioProjects.dbo.NashvilleHousing
 
@@ -39,8 +38,7 @@ SET SaleDateConverted = CONVERT(Date,SaleDate)
 
 -- Populate Property Address data
 
-SELECT 
-	*
+SELECT *
 FROM 
 	PortfolioProjects.dbo.NashvilleHousing
 --WHERE 
@@ -116,8 +114,7 @@ SET PropertySplitCity = SUBSTRING(PropertyAddress, CHARINDEX(',', PropertyAddres
 
 
 
-SELECT 
-	*
+SELECT *
 FROM 
 	PortfolioProjects.dbo.NashvilleHousing
 
@@ -163,8 +160,7 @@ SET OwnerSplitState = PARSENAME(REPLACE(OwnerAddress, ',', '.') , 1)
 
 
 
-SELECT 
-	*
+SELECT *
 FROM 
 	PortfolioProjects.dbo.NashvilleHousing
 
@@ -216,8 +212,7 @@ SET SoldAsVacant = CASE When SoldAsVacant = 'Y' THEN 'Yes'
 WITH RowNumCTE 
 AS
 (
-SELECT 
-	*,
+SELECT *,
 	ROW_NUMBER() OVER (
 	PARTITION BY ParcelID,
 				 PropertyAddress,
@@ -243,8 +238,7 @@ ORDER BY
 
 
 
-SELECT 
-	*
+SELECT *
 FROM 
 	PortfolioProjects.dbo.NashvilleHousing
 
@@ -255,8 +249,7 @@ FROM
 -- Delete Unused Columns
 
 
-SELECT 
-	*
+SELECT *
 FROM 
 	PortfolioProjects.dbo.NashvilleHousing
 
